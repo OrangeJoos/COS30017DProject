@@ -29,7 +29,7 @@ public class YearRange extends AppCompatActivity {
 
                 Spinner startYearSpinner = findViewById(R.id.startYear);
                 int startYear = Integer.parseInt(startYearSpinner.getSelectedItem().toString());
-                Spinner endYearSpinner = findViewById(R.id.testEndYear);
+                Spinner endYearSpinner = findViewById(R.id.nameIS);
                 int endYear = Integer.parseInt(endYearSpinner.getSelectedItem().toString());
 
                 if(startYear > endYear){
@@ -37,13 +37,7 @@ public class YearRange extends AppCompatActivity {
                     error.show();
                 }
                 else{
-                    Intent getGender = getIntent();
-                    int gender = getGender.getIntExtra("gender", 0);
-                    Intent generateName = new Intent(YearRange.this, GenerateName.class);
-                    generateName.putExtra("gender", gender);
-                    generateName.putExtra("startYear", startYear);
-                    generateName.putExtra("endYear", endYear);
-                    startActivity(generateName);
+                    passData(startYear,endYear);
                 }
 
             }
@@ -51,6 +45,13 @@ public class YearRange extends AppCompatActivity {
     }
 
     void passData(int startYear, int endYear){
-
+        Intent getGender = getIntent();
+        int gender = getGender.getIntExtra("gender", 0);
+        Intent generateName = new Intent(YearRange.this, GenerateName.class);
+        generateName.putExtra("gender", gender);
+        generateName.putExtra("startYear", startYear);
+        generateName.putExtra("endYear", endYear);
+        startActivity(generateName);
+        finish();
     }
 }

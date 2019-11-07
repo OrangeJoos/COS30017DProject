@@ -7,37 +7,89 @@
     tools:context=".GenerateName">
 
     <TextView
-        android:id="@+id/testGender"
-        android:layout_width="144dp"
-        android:layout_height="35dp"
-        android:layout_marginTop="70dp"
-        android:text="TextView"
+        android:id="@+id/genderText"
+        android:layout_width="133dp"
+        android:layout_height="42dp"
+        android:layout_marginTop="71dp"
+        android:layout_marginEnd="93dp"
+        android:text="[gender]"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/your"
+        android:layout_width="65dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="71dp"
+        android:text="Your"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/testStartYear"
-        android:layout_width="142dp"
-        android:layout_height="39dp"
-        android:layout_marginTop="46dp"
-        android:text="TextView"
+        android:id="@+id/nameIS"
+        android:layout_width="110dp"
+        android:layout_height="45dp"
+        android:text="name is"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/testGender" />
+        app:layout_constraintTop_toBottomOf="@+id/your" />
 
     <TextView
-        android:id="@+id/testEndYear"
-        android:layout_width="147dp"
-        android:layout_height="51dp"
-        android:layout_marginStart="134dp"
-        android:layout_marginTop="54dp"
-        android:layout_marginEnd="130dp"
-        android:text="TextView"
-        android:textSize="30sp"
+        android:id="@+id/nameText"
+        android:layout_width="211dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="96dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="103dp"
+        android:text="NAME"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/testStartYear" />
+        app:layout_constraintTop_toBottomOf="@+id/nameIS" />
+
+    <Button
+        android:id="@+id/saveName"
+        android:layout_width="164dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="135dp"
+        android:text="Save Name"
+        app:layout_constraintBottom_toTopOf="@+id/shareButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nameText" />
+
+    <Button
+        android:id="@+id/shareButton"
+        android:layout_width="164dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="124dp"
+        android:layout_marginTop="33dp"
+        android:layout_marginEnd="123dp"
+        android:layout_marginBottom="40dp"
+        android:text="Share Name"
+        app:layout_constraintBottom_toTopOf="@+id/repeatButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/saveName" />
+
+    <Button
+        android:id="@+id/repeatButton"
+        android:layout_width="167dp"
+        android:layout_height="56dp"
+        android:layout_marginStart="125dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginBottom="75dp"
+        android:text="Generate Another Name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/shareButton" />
 </androidx.constraintlayout.widget.ConstraintLayout>

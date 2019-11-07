@@ -48,5 +48,6 @@ public class gender extends AppCompatActivity {
         Intent genderactivity = new Intent(gender.this, YearRange.class);
         genderactivity.putExtra("gender", Gender);
         startActivity(genderactivity);
+        finish();
     }
 }
