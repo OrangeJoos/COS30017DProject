@@ -64,25 +64,25 @@ public class GenerateName extends AppCompatActivity {
 
         PopularBabyNamesAPI popularBabyNamesAPI = retrofit.create(PopularBabyNamesAPI.class);
 
-        Call<PostList> call = popularBabyNamesAPI.getPosts(usedYear,gender,position);
-        call.enqueue(new Callback<PostList>() {
+        Call<BabyList> call = popularBabyNamesAPI.getPosts(usedYear,gender,position);
+        call.enqueue(new Callback<BabyList>() {
             @Override
-            public void onResponse(Call<PostList> call, Response<PostList> response) {
+            public void onResponse(Call<BabyList> call, Response<BabyList> response) {
                 if(!response.isSuccessful()){
                     name.setText("Code:" + response.code());
                     return;
                 }
-                PostList posts = response.body();
-                Post post = posts.getPosts().get(0);
-                babyName = post.getName();
-                babyGender = post.getSex();
-                Log.i("POST", post.getName());
+                BabyList babies = response.body();
+                Baby baby = babies.getBabies().get(0);
+                babyName = baby.getName();
+                babyGender = baby.getSex();
+                Log.i("POST", baby.getName());
                 name.setText(babyName);
                }
 
 
             @Override
-            public void onFailure(Call<PostList> call, Throwable t) {
+            public void onFailure(Call<BabyList> call, Throwable t) {
                 name.setText("FAILURE" + t.getMessage());
             }
         });
