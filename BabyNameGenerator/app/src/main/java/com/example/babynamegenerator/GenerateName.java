@@ -43,11 +43,11 @@ public class GenerateName extends AppCompatActivity {
         switch(genderint){
             case 0:
                 gender = "MALE";
-                genderText.setText("Boy's");
+                genderText.setText("Your boys name is");
                 break;
             case 1:
                 gender = "FEMALE";
-                genderText.setText("Girl's");
+                genderText.setText("Your girls name is");
                 break;
         }
 
@@ -78,7 +78,7 @@ public class GenerateName extends AppCompatActivity {
                 babyGender = baby.getSex();
                 Log.i("POST", baby.getName());
                 name.setText(babyName);
-               }
+            }
 
 
             @Override
@@ -124,7 +124,7 @@ public class GenerateName extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent shareSheet = new Intent(Intent.ACTION_SEND);
-                shareSheet.putExtra(Intent.EXTRA_TEXT, "Your new baby's name is NAME congratulations!");
+                shareSheet.putExtra(Intent.EXTRA_TEXT, "Your new baby's name is " + babyName + ", congratulations!");
                 shareSheet.setType("text/plain");
                 startActivity(Intent.createChooser(shareSheet,"Share Name to..."));
             }

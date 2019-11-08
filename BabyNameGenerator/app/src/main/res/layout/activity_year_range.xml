@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".YearRange">
+    tools:context=".YearRange"
+    android:background="@drawable/beardark">
 
     <TextView
         android:id="@+id/textView2"
@@ -12,10 +13,13 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="Use Popular Names From Years"
+        android:textColor="@color/textColor"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:fontFamily="cursive"
+        android:textStyle="bold"/>
 
     <CheckBox
         android:id="@+id/ignoreDate"
@@ -23,9 +27,12 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="35dp"
         android:text="Use Names from Every Year"
+        android:textColor="@color/textColor"
         app:layout_constraintBottom_toTopOf="@+id/confirmYears"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="cursive"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/confirmYears"
@@ -35,7 +42,9 @@
         android:text="Generate Name!"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        android:fontFamily="cursive"
+        android:textStyle="bold"/>
 
     <Spinner
         android:id="@+id/startYear"
@@ -47,7 +56,9 @@
         android:entries="@array/years"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        android:fontFamily="cursive"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/textView3"
@@ -55,9 +66,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="59dp"
         android:text="Start Year"
+        android:textColor="@color/textColor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        android:fontFamily="cursive"
+        android:textStyle="bold"/>
 
     <Spinner
         android:id="@+id/nameIS"
@@ -69,17 +83,22 @@
         android:entries="@array/years"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4"
+        android:fontFamily="cursive"
+        android:textStyle="bold"/>
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="177dp"
+        android:textColor="@color/textColor"
         android:layout_marginTop="68dp"
         android:layout_marginEnd="178dp"
         android:text="End Year"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/startYear" />
+        app:layout_constraintTop_toBottomOf="@+id/startYear"
+        android:fontFamily="cursive"
+        android:textStyle="bold"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

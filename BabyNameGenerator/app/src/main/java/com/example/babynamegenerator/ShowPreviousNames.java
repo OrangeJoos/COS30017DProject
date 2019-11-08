@@ -2,8 +2,11 @@ package com.example.babynamegenerator;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -27,7 +30,37 @@ public class ShowPreviousNames extends AppCompatActivity {
         babyNames = new ArrayList<>();
         babyGenders = new ArrayList<>();
 
+        readToList();
 
+        printData();
+
+        Button shareNames = findViewById(R.id.shareNamesButton);
+        shareNames.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String ListsToString = "Generated Baby Names:\n";
+                for(int i = 0;i<babyNames.size();i++){
+                    ListsToString += babyNames.get(i) + "\t";
+                    Log.i("COUNT", String.valueOf(babyGenders.get(i).length()));
+                    if(babyGenders.get(i).length() == 4){
+                        ListsToString += "Boy" + "\n";
+                    }
+                    else{
+                        ListsToString += "Girl" + "\n";
+                    }
+                }
+
+
+                Intent shareSheet = new Intent(Intent.ACTION_SEND);
+                shareSheet.putExtra(Intent.EXTRA_TEXT, ListsToString);
+                shareSheet.setType("text/plain");
+                startActivity(Intent.createChooser(shareSheet,"Share to..."));
+            }
+        });
+
+    }
+
+    private void readToList(){
         FileInputStream file = null;
         try {
             file = openFileInput("baby_names.txt");
@@ -47,19 +80,23 @@ public class ShowPreviousNames extends AppCompatActivity {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
 
-
+    private void printData(){
         for(int i=0;i<babyNames.size();i++){
             printName += babyNames.get(i) + "\n";
-            printGender += babyGenders.get(i) + "\n";
-        }
+            int genderLength = babyGenders.get(i).length();
+            if(genderLength == 4){ //Check if "MALE" or "FEMALE"
+                printGender += "Boy" + "\n";
+            }
+            else{
+                printGender += "Girl" + "\n";
+            }
 
-        Log.i("PRINT NAME", printName);
-        Log.i("PRINT GENDER", printGender);
+        }
 
         TextView nameText = findViewById(R.id.names);
         nameText.setText(printName);
-
         TextView genderText = findViewById(R.id.genders);
         genderText.setText(printGender);
     }

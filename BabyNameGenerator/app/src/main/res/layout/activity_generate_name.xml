@@ -4,58 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".GenerateName">
+    tools:context=".GenerateName"
+    android:background="@drawable/beardark"
+    >
+
 
     <TextView
         android:id="@+id/genderText"
-        android:layout_width="133dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="71dp"
-        android:layout_marginEnd="93dp"
-        android:text="[gender]"
+        android:layout_width="271dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="70dp"
+        android:layout_marginTop="108dp"
+        android:layout_marginEnd="60dp"
+        android:text="Your babys name is"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
         android:textSize="30sp"
+        android:textColor="@color/textColor"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/your"
-        android:layout_width="65dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginTop="71dp"
-        android:text="Your"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/nameIS"
-        android:layout_width="110dp"
-        android:layout_height="45dp"
-        android:text="name is"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/your" />
 
     <TextView
         android:id="@+id/nameText"
-        android:layout_width="211dp"
-        android:layout_height="20dp"
+        android:layout_width="229dp"
+        android:layout_height="45dp"
         android:layout_marginStart="96dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="103dp"
+        android:gravity="center"
         android:text="NAME"
-        android:textSize="18sp"
+        android:textColor="@color/textColor"
+        android:textSize="30sp"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameIS" />
+        app:layout_constraintTop_toBottomOf="@+id/genderText" />
 
     <Button
         android:id="@+id/saveName"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
         android:layout_width="164dp"
         android:layout_height="57dp"
         android:layout_marginTop="135dp"
@@ -67,6 +57,8 @@
 
     <Button
         android:id="@+id/shareButton"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
         android:layout_width="164dp"
         android:layout_height="55dp"
         android:layout_marginStart="124dp"
@@ -82,6 +74,8 @@
 
     <Button
         android:id="@+id/repeatButton"
+        android:fontFamily="cursive"
+        android:textStyle="bold"
         android:layout_width="167dp"
         android:layout_height="56dp"
         android:layout_marginStart="125dp"
