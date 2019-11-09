@@ -40,7 +40,7 @@ public class ShowPreviousNames extends AppCompatActivity {
             public void onClick(View view) {
                 String ListsToString = "Generated Baby Names:\n";
                 for(int i = 0;i<babyNames.size();i++){
-                    ListsToString += babyNames.get(i) + "\t";
+                    ListsToString += babyNames.get(i) + ":\t";
                     Log.i("COUNT", String.valueOf(babyGenders.get(i).length()));
                     if(babyGenders.get(i).length() == 4){
                         ListsToString += "Boy" + "\n";

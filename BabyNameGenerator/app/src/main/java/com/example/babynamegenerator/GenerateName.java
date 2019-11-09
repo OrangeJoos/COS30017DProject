@@ -22,10 +22,14 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Random;
 
+import static java.lang.Boolean.FALSE;
+import static java.lang.Boolean.TRUE;
+
 public class GenerateName extends AppCompatActivity {
     private TextView name;
     private String babyName;
     private String babyGender;
+    private boolean hasSaved = FALSE;
     Random rand = new Random();
 
     @Override
@@ -92,30 +96,36 @@ public class GenerateName extends AppCompatActivity {
         saveName.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FileOutputStream file = null;
-                try {
-                    file = openFileOutput("baby_names.txt", MODE_APPEND);
-                    String vals = babyName + "," + babyGender;
-                    file.write(vals.getBytes());
-                    file.write(("\n").getBytes());
-                    finish();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }finally {
-                    if(file != null){
-                        try {
-                            file.close();
-                        } catch (IOException e) {
-                            e.printStackTrace();
+                if(!hasSaved) {
+                    FileOutputStream file = null;
+                    try {
+                        file = openFileOutput("baby_names.txt", MODE_APPEND);
+                        String vals = babyName + "," + babyGender;
+                        file.write(vals.getBytes());
+                        file.write(("\n").getBytes());
+                    } catch (FileNotFoundException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } finally {
+                        if (file != null) {
+                            try {
+                                file.close();
+                            } catch (IOException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
+
+
+                    Toast save = Toast.makeText(getApplicationContext(), "Your name has been saved!", Toast.LENGTH_LONG);
+                    save.show();
+                    hasSaved = TRUE;
                 }
-
-
-                Toast save = Toast.makeText(getApplicationContext(), "Your name has been saved!", Toast.LENGTH_LONG);
-                save.show();
+                else{
+                    Toast saveerror = Toast.makeText(getApplicationContext(), "You have already saved this name!", Toast.LENGTH_LONG);
+                    saveerror.show();
+                }
             }
         });
 
